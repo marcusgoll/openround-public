@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">OpenRound</title>
+  <desc id="desc">Blue golf target on a green field.</desc>
+  <rect width="512" height="512" rx="112" fill="#006bdc"/>
+  <circle cx="256" cy="256" r="164" fill="#1f7a3a"/>
+  <circle cx="256" cy="256" r="116" fill="none" stroke="#f7fbff" stroke-width="18"/>
+  <circle cx="256" cy="256" r="52" fill="none" stroke="#f7fbff" stroke-width="18"/>
+  <circle cx="256" cy="256" r="15" fill="#f7fbff"/>
+  <path d="M256 86v96" stroke="#f7fbff" stroke-width="18" stroke-linecap="round"/>
+  <path d="M256 88c49 11 77 11 108 0v58c-31 11-59 11-108 0z" fill="#f7fbff"/>
+</svg>

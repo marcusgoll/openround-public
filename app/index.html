@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#0b3b32">
+    <meta name="description" content="Private local-first golf round capture.">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="./icon.svg">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="apple-touch-icon" href="./icon.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <title>OpenRound</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Private golf capture</p>
+        <h1>OpenRound</h1>
+      </div>
+      <span id="demo-badge" class="badge" hidden>Demo mode</span>
+    </header>
+
+    <main class="shell">
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <section id="round-list-view" class="panel">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Rounds</p>
+            <h2>Start a capture</h2>
+          </div>
+          <span id="storage-state" class="muted">Checking storage…</span>
+        </div>
+        <p class="body-copy">Keep this screen visible during play. OpenRound records phone GPS locally and never sends it anywhere.</p>
+        <button id="start-round" class="primary-button" type="button">Start round</button>
+        <div id="round-list" class="round-list" aria-live="polite"></div>
+      </section>
+
+      <section id="active-view" class="panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Active round</p>
+            <h2 id="active-round-title">Round</h2>
+          </div>
+          <span id="elapsed" class="timer">00:00</span>
+        </div>
+
+        <div class="metrics" aria-label="Capture status">
+          <div class="metric"><span>GPS</span><strong id="gps-state">Waiting</strong></div>
+          <div class="metric"><span>Last fix</span><strong id="last-fix">—</strong></div>
+          <div class="metric"><span>Accuracy</span><strong id="accuracy">—</strong></div>
+          <div class="metric"><span>Fixes</span><strong id="breadcrumb-count">0</strong></div>
+          <div class="metric"><span>Events</span><strong id="event-count">0</strong></div>
+        </div>
+
+        <div id="gps-detail" class="callout">Location permission is requested when a round starts.</div>
+
+        <div id="demo-controls" class="demo-controls" hidden>
+          <p class="eyebrow">Dogfood controls</p>
+          <p class="body-copy">These controls create labelled demo evidence; they are not sensor data.</p>
+          <div class="button-row">
+            <button id="add-test-fix" class="secondary-button" type="button">Add test fix</button>
+            <button id="add-test-shot" class="secondary-button" type="button">Add test shot</button>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="retry-gps" class="secondary-button" type="button" hidden>Retry GPS</button>
+          <button id="end-round" class="danger-button" type="button">End round</button>
+          <button id="export-active" class="secondary-button" type="button">Export JSON</button>
+        </div>
+      </section>
+
+      <section id="pin-view" class="panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Pin placement</p>
+            <h2>Camera range finder</h2>
+          </div>
+          <span id="pin-badge" class="badge" hidden>Camera ready</span>
+        </div>
+
+        <p class="body-copy">Use the rear camera, mark the pin top and bottom, then estimate pin distance with flag-height + slope correction.</p>
+
+        <div class="button-row">
+          <button id="start-pin-camera" class="secondary-button" type="button">Open camera</button>
+          <button id="stop-pin-camera" class="secondary-button" type="button" hidden>Stop camera</button>
+          <button id="pin-clear" class="text-button" type="button">Clear points</button>
+        </div>
+
+        <div id="pin-camera-frame" class="pin-camera-frame" aria-live="polite">
+          <video id="pin-video" class="pin-video" playsinline muted></video>
+          <div id="pin-guide" class="pin-guide" hidden aria-hidden="true">
+            <span id="pin-marker-top" class="pin-marker pin-marker-top" hidden>top</span>
+            <span id="pin-marker-bottom" class="pin-marker pin-marker-bottom" hidden>bot</span>
+          </div>
+          <p id="pin-hint" class="pin-hint">Tip: tap the pin top, then pin bottom.</p>
+        </div>
+
+        <div class="pin-controls">
+          <label>
+            Flag height (in)
+            <input id="pin-height-in" type="number" value="42" min="36" max="54" step="0.5">
+          </label>
+          <label>
+            Pin slope (° up from flat)
+            <input id="pin-slope-deg" type="number" value="0" min="-20" max="20" step="0.5">
+          </label>
+          <label>
+            Estimated vertical FOV (°)
+            <input id="pin-fov-deg" type="number" value="65" min="40" max="85" step="0.5">
+          </label>
+          <label id="pin-zoom-wrap">
+            Zoom
+            <div class="range-row">
+              <input id="pin-zoom" type="range" min="1" max="1" step="0.1" value="1">
+              <span id="pin-zoom-value">1.0x</span>
+            </div>
+          </label>
+        </div>
+
+        <div class="pin-result" id="pin-result">No measurement yet.</div>
+
+        <div class="button-row">
+          <button id="pin-simulate" class="secondary-button" type="button">Try 75 yd simulation</button>
+          <button id="pin-save" class="secondary-button" type="button" disabled>Save to round</button>
+        </div>
+        <p class="pin-simulation-note">Simulation checks the estimator with known inputs; it does not validate camera calibration.</p>
+      </section>
+
+      <section id="review-view" class="panel" hidden>
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Review</p>
+            <h2 id="review-title">Round</h2>
+          </div>
+          <button id="back-to-rounds" class="text-button" type="button">All rounds</button>
+        </div>
+        <div id="review-summary" class="summary-grid"></div>
+        <div class="review-section">
+          <h3>Events</h3>
+          <div id="event-list" class="evidence-list"></div>
+        </div>
+        <div class="review-section">
+          <h3>Gaps</h3>
+          <div id="gap-list" class="evidence-list"></div>
+        </div>
+        <div class="review-section">
+          <h3>Breadcrumbs</h3>
+          <div id="breadcrumb-list" class="evidence-list"></div>
+        </div>
+        <button id="export-review" class="primary-button" type="button">Export JSON</button>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Local-first · no account · no hardware required</span>
+    </footer>
+
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

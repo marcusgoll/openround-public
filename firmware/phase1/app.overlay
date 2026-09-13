@@ -1,0 +1,56 @@
+/*
+ * OpenRound Phase 1 v0 — application overlay for xiao_ble/nrf52840/sense.
+ *
+ * The board devicetree (Zephyr v4.4.2,
+ * boards/seeed/xiao_ble/) already provides everything v0 needs:
+ *
+ *   - Console on USB CDC-ACM: xiao_ble_common.dtsi includes
+ *     boards/common/usb/cdc_acm_serial.dtsi, which sets
+ *     zephyr,console = &board_cdc_acm_uart.
+ *   - Onboard IMU: xiao_ble_nrf52840_sense.dts defines lsm6ds3tr_c@6a
+ *     (compatible "st,lsm6dsl" — the LSM6DS3TR-C shares the LSM6DSL
+ *     register map and WHO_AM_I 0x6A) on the internal &i2c0 TWIM bus at
+ *     400 kHz, with DRDY on P0.11.
+ *   - IMU power: a regulator-fixed node ("lsm6ds3tr-c-en") drives 6D_PWR
+ *     (P1.08) high at boot (regulator-boot-on, 3 ms startup delay). With
+ *     CONFIG_REGULATOR=y (board defconfig) no application code touches it.
+ */
+
+&board_cdc_acm_uart {
+	/* ~57 KB/s of CSV at 1666 Hz; 4 KiB cushions USB scheduling gaps. */
+	tx-fifo-size = <4096>;
+	rx-fifo-size = <4096>;
+};
+
+/*
+ * TODO(adxl375): ADXL375 +/-200 g breakout (Adafruit PID 5374, I2C addr
+ * 0x53) — wire STEMMA QT SDA/SCL to the XIAO pads D4 (P0.04) / D5 (P0.05),
+ * which are &i2c1 (nordic,nrf-twi, already status "okay" in
+ * xiao_ble_common.dtsi). 3V3 and GND from the XIAO header.
+ *
+ * Zephyr v4.4.2 has NO in-tree adi,adxl375 binding or driver (checked
+ * 2026-08-20: dts/bindings/sensor/ carries adxl313/345/355/362/366/367/372
+ * only). The ADXL375 is the +/-200 g sibling of the ADXL345 with the same
+ * register map but a different, fixed sensitivity (~20.5 LSB/g), so
+ * pretending it is an "adi,adxl345" would enumerate but report wrongly
+ * scaled data — do not do that silently.
+ *
+ * When the part arrives, in order of preference:
+ *   1. Re-check whether current Zephyr gained adi,adxl375 support and use it.
+ *   2. Add a small out-of-tree binding + driver (ADXL345 driver with the
+ *      375 sensitivity constant) in this app's own module.
+ *   3. Phase-1-quality fallback: raw i2c_* register access from main.c
+ *      (acceptable for the ADXL375 because there is no in-tree driver;
+ *      the onboard LSM6DS3TR-C stays on the standard sensor API).
+ *
+ * Then uncomment and adapt:
+ *
+ *   &i2c1 {
+ *       status = "okay";
+ *       adxl375: adxl375@53 {
+ *           compatible = "adi,adxl375";
+ *           reg = <0x53>;
+ *           status = "okay";
+ *       };
+ *   };
+ */

@@ -1,0 +1,11 @@
+{
+  "name": "Synthetic arithmetic fixture; not calibrated",
+  "putting_ft": [[1, 0.8], [2, 1.2], [8, 1.8], [20, 3]],
+  "off_green_yd": {
+    "tee": [[100, 3], [400, 6], [600, 8]],
+    "fairway": [[10, 1.5], [100, 2], [200, 4]],
+    "rough": [[10, 2], [20, 3], [200, 5]],
+    "sand": [[10, 3], [200, 6]],
+    "recovery": [[10, 4], [200, 7]]
+  }
+}

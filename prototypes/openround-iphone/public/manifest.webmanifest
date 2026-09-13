@@ -1,0 +1,19 @@
+{
+  "name": "OpenRound · GPS Golf Caddy",
+  "short_name": "OpenRound",
+  "description": "Deterministic GPS golf rangefinder and caddy suggestions.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f2f2",
+  "theme_color": "#006bdc",
+  "icons": [
+    {
+      "src": "/assets/openround-app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

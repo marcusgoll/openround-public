@@ -1,0 +1,22 @@
+{
+  "hole": {
+    "number": 2,
+    "tees": [],
+    "features": [],
+    "geometryStatus": "unmapped"
+  },
+  "quality": {
+    "grade": "D",
+    "status": "unmapped",
+    "missing": [
+      "tee",
+      "green",
+      "aim path"
+    ],
+    "hazardsUsable": false,
+    "pinUsable": false,
+    "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+  },
+  "provider": "openstreetmap-overpass",
+  "sourceVersion": "osm-live"
+}

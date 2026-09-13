@@ -1,0 +1,17 @@
+{
+  "name": "OpenRound",
+  "short_name": "OpenRound",
+  "description": "Private local-first golf round capture",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f3f7f5",
+  "theme_color": "#0b3b32",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

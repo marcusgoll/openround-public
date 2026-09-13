@@ -1,0 +1,1191 @@
+{
+  "provider": "openstreetmap-overpass",
+  "version": "v2.1.5",
+  "generatedAt": "2026-08-28T23:54:13.774Z",
+  "attribution": "© OpenStreetMap contributors (ODbL 1.0)",
+  "records": [
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-1",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 1,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-1.json",
+      "sha256": "2b1960d56af0cbed4c159282376383487c3f77528e590214e6d584bbfb7f9d79",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-2",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 2,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-2.json",
+      "sha256": "970c3c521adf0e659095e685d3616be545f5e360db802b3288547385e8bd311c",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-3",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 3,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-3.json",
+      "sha256": "8497f335dd5a2ff31fff6437484bfb2e3ea500a110ad33856b8c8a1c36d41ab4",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-4",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 4,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-4.json",
+      "sha256": "611a68a813838f319dcb4ebd7f8b63587aa1eb55025355e532668cd390b57864",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-5",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 5,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-5.json",
+      "sha256": "40adc030e94313ca90d78a86248d1d43168232895ea5f480860ca5e22b8a5ad4",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-6",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 6,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-6.json",
+      "sha256": "b46cbab9938eda828c7e634d288e509360d8fdaf8812940f7dc4b192a8fac960",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-7",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 7,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-7.json",
+      "sha256": "2c31ebe30ff29ca693b9b4a83e1c8f10ceb68be27bc3e6024d648042e903749e",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271:hole-8",
+      "courseId": "0e1e596d-8e86-4ff8-90e9-6a439a0ba271",
+      "holeNumber": 8,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/0e1e596d-8e86-4ff8-90e9-6a439a0ba271/hole-8.json",
+      "sha256": "c1ab8acef5799b88f7e5cc1f5016d6e7fd598d943a3624ce79a594cae1f67f4f",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-1",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 1,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-1.json",
+      "sha256": "d205cd2b70b3ca38e61ece71c4452622aebdad6de9fb11c1b9297518900ccaf7",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-10",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 10,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-10.json",
+      "sha256": "df05516a2077e34b49e627beaeb7065094a417bb9f1dea29fcc39b94e4562c0c",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-11",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 11,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-11.json",
+      "sha256": "837b19817e90a4357d88459ec7b7de6c6f512af5f61d22c26e07b24975e9ba94",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-2",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 2,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-2.json",
+      "sha256": "0caed2a931862c298c2c40d4b1c5af84f8df0c105c10b43a74b57b5a066fabbe",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "D",
+        "status": "unmapped",
+        "missing": [
+          "tee",
+          "green",
+          "aim path"
+        ],
+        "hazardsUsable": false,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-3",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 3,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-3.json",
+      "sha256": "1273f549cb33346729e87b963e47f2c503fe1d49cff239d47c5996c6a3440b99",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "D",
+        "status": "unmapped",
+        "missing": [
+          "tee",
+          "green",
+          "aim path"
+        ],
+        "hazardsUsable": false,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-4",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 4,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-4.json",
+      "sha256": "0a69f99795f4ce4a282cb305672cea34e1ce5620e9e2b9cad07aed27245e971f",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-5",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 5,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-5.json",
+      "sha256": "f44eb16f6551d75ebb8fa2118792dc0ee401effec3b31dcd89a7e88caa3d4092",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-6",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 6,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-6.json",
+      "sha256": "6fcea7e589bee7edf79d8aaafc45f9f4f10ce1f65850c1a67bfc7f541df1795a",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-7",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 7,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-7.json",
+      "sha256": "3192fbe409f88ed5b39e506afbcfbfb32e211dc6979c362cd20920ec6b937381",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-8",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 8,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-8.json",
+      "sha256": "0bda08a25068dc861ed17b7d8260b1600e87f1e7965a40db4bb6ffebacb1b75c",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc:hole-9",
+      "courseId": "40977ee8-33ee-4195-b6a2-99a4ca83c2bc",
+      "holeNumber": 9,
+      "artifact": "geometry/opengolfapi-us-v2.1.0/40977ee8-33ee-4195-b6a2-99a4ca83c2bc/hole-9.json",
+      "sha256": "9916d62d4bce4ba549aba30b4a6c41ffee5f3992fe72f5618439b22d93006a8d",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-1",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 1,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-1.json",
+      "sha256": "c5d436a87405bccecdbc428608fecc8228a2794c60fcd10b291ef533a772ce38",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-10",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 10,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-10.json",
+      "sha256": "ad7150ab14d659e4c5a1cf3907bf2a59a8c8eaa9062a211a740928630d61e8d4",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-11",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 11,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-11.json",
+      "sha256": "6f2a3f6f6bf7428594194444b2b16d63761f1077f78376227d1a11644597bb39",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-12",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 12,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-12.json",
+      "sha256": "3775cf75cb5a329d5db1d61dd83a1d24a7908b31ebba42f811bf9ed0bb34baab",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-13",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 13,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-13.json",
+      "sha256": "7cb24b64b001db7f09d51fab8fa885e524c401b20eeb4d87d31dc2b8885e80a1",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-14",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 14,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-14.json",
+      "sha256": "31d5ca62fa3d8c3bbf993dd45476f2d6495127e51c2b781860f917509c232198",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-2",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 2,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-2.json",
+      "sha256": "5ea388300ef380f94d4de3ec8b13e17e4812878a4f42e4644da1c35e50dd9ae4",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-3",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 3,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-3.json",
+      "sha256": "e57b4932efebe2c8924ed98cae5e77914c27d85c9a4ca1828231839615306d3d",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-4",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 4,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-4.json",
+      "sha256": "b99692c91f605d9301aec35f5763ba4033191bb3a97f91af4548a857693fb4fd",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-5",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 5,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-5.json",
+      "sha256": "8b6dcaa2ad8ec7becdab8bb2a067515c8d3f379c1737825011a2ee19dee756a0",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-6",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 6,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-6.json",
+      "sha256": "f4c2078a00da485f431c10a8cfcaae77eaa3d8c3f0db96813de32224cc11003c",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-7",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 7,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-7.json",
+      "sha256": "0db822d3c6870d64233865d9154464b0ed8ea9b0f09e7686769a49b07ea33272",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-8",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 8,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-8.json",
+      "sha256": "af50fa9b697e981d15a2c958086444aef6f7f5909d8583824222a71fc82e134c",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "86620a66-2f67-409e-8aaa-8d503d820631:hole-9",
+      "courseId": "86620a66-2f67-409e-8aaa-8d503d820631",
+      "holeNumber": 9,
+      "artifact": "geometry/opengolfapi-us-v2.1.5/86620a66-2f67-409e-8aaa-8d503d820631/hole-9.json",
+      "sha256": "8660502db58234df7756dd5db7535a6ae0c58842c10fe9037683b335338165e3",
+      "sourceVersion": "osm-live",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-1",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 1,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-1.json",
+      "sha256": "023ba501f31f49de7dc9e2408d0c22cd0a26f00612f77bfbe7e342be7b2f746f",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-10",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 10,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-10.json",
+      "sha256": "e2db93d7704db4945ecbea4b4047bda2643c8e10d80816c9c7696dea68d273a1",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-11",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 11,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-lakes-pending-v1/hole-11.json",
+      "sha256": "815c07997b3cab602c11f01bad6651333daf422950b11633fc936db04432b034",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-12",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 12,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-12.json",
+      "sha256": "18276a482dfe69f3853bc206595947721aed84b819d3d5684a64cb3a40bd0e62",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-13",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 13,
+      "artifact": "geometry/opengolfapi-us-v2.1.2/personal-squaw-valley-lakes-pending-v1/hole-13.json",
+      "sha256": "663b0875c4cdc232e2e6b1b96b79377bfac3bd3a6c67d5bddf48fb28514dc8b2",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-14",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 14,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-14.json",
+      "sha256": "0ea867918c6aae31c0083372fb42d8e87191326a7141a6f7be927d201b4c3c2b",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-15",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 15,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-15.json",
+      "sha256": "13335f0d2ee2a89ec5e8cfb51a892d93011b647bb3e2705356a4e2d3ecb18aa9",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-16",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 16,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-lakes-pending-v1/hole-16.json",
+      "sha256": "096ea8891046b3e720d5fa11a84c4cfdcecc702d8ced06d7afeace639ea45696",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-17",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 17,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-17.json",
+      "sha256": "ef707abe642b0867ae0b64621a913443c3aaa9980357d569bc53071ce242ed4d",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-18",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 18,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-18.json",
+      "sha256": "5248bd4ddd8d66babd138b6eaeee6fd8284cbb47a96e5423f47a286555a66893",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-2",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 2,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-2.json",
+      "sha256": "80883026b1c3df2f1484799a168575c5cc5092fc2c8e9ba6ce87728599f65307",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-3",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 3,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-3.json",
+      "sha256": "79d8b988d48b1d71fc958136c37fd77ee1b094330f5d1eb38cef5c13bcc7a351",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-4",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 4,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-4.json",
+      "sha256": "42f3c4011a173c6926648ec46155cae2699e480231c500493f8b7f9813587e80",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-5",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 5,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-5.json",
+      "sha256": "45f5d730bd83f4864b7f219a60825596166abcac22c12debcd245fa4f2b0f3e5",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-6",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 6,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-lakes-pending-v1/hole-6.json",
+      "sha256": "0c6f449ffcea88ecd6361effa67786d80459c1c5a9fe1f1bb99a5b66f37cfe46",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-7",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 7,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-7.json",
+      "sha256": "6b8cec59a96c3c9ba7eafc64115e0ae5a8f090f30ae00cdb86eeefc99f885a61",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-8",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 8,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-8.json",
+      "sha256": "572291a11804b20f3e9a1650d80d7003bb871f9b7fac3da3cb6e90430b72c125",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-lakes-pending-v1:hole-9",
+      "courseId": "personal-squaw-valley-lakes-pending-v1",
+      "holeNumber": 9,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-lakes-pending-v1/hole-9.json",
+      "sha256": "e93abb115239274e9b31ed8bbc4a4a80adb0cef4e6fff1c0fba99b5627e712ba",
+      "sourceVersion": "personal-osm-lakes-v1",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-1",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 1,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-1.json",
+      "sha256": "7d6f6702369f0228a8a38e52c3e9d8ff21a1e9ec8a4758906360e90f92aca44f",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-10",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 10,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-10.json",
+      "sha256": "bc4ceaab7c3baed33f6dd9a573ffa9fc3783ce4d2c179e9abba4962d07fd6992",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "C",
+        "status": "partial",
+        "missing": [
+          "aim path"
+        ],
+        "hazardsUsable": false,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-11",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 11,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-11.json",
+      "sha256": "b518c4281ba30cb19eb437cab31c50b819f7f99a009df9cbf3e261d8540e3052",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-12",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 12,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-12.json",
+      "sha256": "aabb142e2dcd7f7b16ee2bea21bebbccdfcbf23e0ba372831fed9298ef430f78",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-13",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 13,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-13.json",
+      "sha256": "473e3e2ba0ac7774b20384ba6295f5de1b212332b536af651e43887477da44f9",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-14",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 14,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-14.json",
+      "sha256": "add488402cba6775fdfdbdf0c9bb04418aa0b06b34377fa1880db7b280b5379a",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": false,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-15",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 15,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-15.json",
+      "sha256": "e5121acb07a6f3e5ff32161b80dbc3a487264780b8e6b6d4e350e79e7c128912",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-16",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 16,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-16.json",
+      "sha256": "e232b2ff3da0fde7e128af6c18353f7c6edfd14b6882cc6ad9ae6d96c58343ec",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-17",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 17,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-17.json",
+      "sha256": "2fc58d10c7df5ee7eef12ba1fb4da893c22dbfe72144e05a4bd6121cf9f8bd1e",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-18",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 18,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-18.json",
+      "sha256": "6cebf6d00d127d63804717bd96bb1b06bf776189d54957f8ec672d7cee050e3f",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-2",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 2,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-2.json",
+      "sha256": "219b6cc54c7ae178b8f39e393802216939ae69bc0e1626333b6be5b6ece2c3ed",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-3",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 3,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-3.json",
+      "sha256": "eb57851e59fdf24795787cef01f3e739040c4a5dddb8280bf09ee5cfd3fb5734",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-4",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 4,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-4.json",
+      "sha256": "9bfae6df8f83108b2da9ff071f574e8249aae1cc9e0a8744864daa9f609be692",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-5",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 5,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-5.json",
+      "sha256": "176ce95829af9a45c57291c63a298c2395d3ba12c5f0d3d02c031908d56fbfcd",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-6",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 6,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-6.json",
+      "sha256": "769d230475cf5e27d160eda7bd4f460b06205b79268e52ca6c23151e1202f0a5",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-7",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 7,
+      "artifact": "geometry/opengolfapi-us-v2.1.1/personal-squaw-valley-links-osm-v1/hole-7.json",
+      "sha256": "17fabbab12721cc04d135a0d9d7754c28088d8fb6436145244fa1688a91c96eb",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-8",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 8,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-8.json",
+      "sha256": "3b4f3cdaa206a06bb496a883e683d229e8f17f617359c2e3680b92b190f66614",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "B",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": false,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    },
+    {
+      "key": "personal-squaw-valley-links-osm-v1:hole-9",
+      "courseId": "personal-squaw-valley-links-osm-v1",
+      "holeNumber": 9,
+      "artifact": "geometry/opengolfapi-us-v2.1.4/personal-squaw-valley-links-osm-v1/hole-9.json",
+      "sha256": "73cd2be9b600770f1cbc0e095b7a26bee1492e2589d20c18dc0e1395b43cfaf9",
+      "sourceVersion": "personal-osm-links-v2",
+      "quality": {
+        "grade": "A",
+        "status": "complete",
+        "missing": [],
+        "hazardsUsable": true,
+        "pinUsable": true,
+        "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+      },
+      "attribution": "© OpenStreetMap contributors (ODbL 1.0)"
+    }
+  ]
+}

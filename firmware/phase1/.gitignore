@@ -1,0 +1,4 @@
+# Zephyr build output (west --build-dir points here)
+build/
+# Twister / sysbuild leftovers if ever run from this directory
+twister-out*/

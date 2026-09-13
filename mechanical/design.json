@@ -1,0 +1,329 @@
+{
+  "schema_version": "1",
+  "project": {
+    "name": "OpenRound grip-end sensor tag research packet",
+    "revision": "0.2.0"
+  },
+  "status": "design",
+  "units": {
+    "length": "mm",
+    "force": "N",
+    "mass": "kg",
+    "stress": "MPa"
+  },
+  "coordinate_system": {
+    "origin": "PCB reference origin or measured tag center of mass; freeze the choice before CAD release",
+    "axes": "right-handed; +Z follows the club shaft toward the clubhead, +X and +Y are fixed to the PCB reference; field orientation is not repeatable unless the grip interface indexes the tag"
+  },
+  "requirements": [
+    {
+      "id": "REQ-001",
+      "statement": "The final tag shall target 9-10 g mass and shall not exceed 12 g.",
+      "verification": "inspection|test",
+      "status": "defined",
+      "source": "docs/hardware-review.md#major-design-changes"
+    },
+    {
+      "id": "REQ-002",
+      "statement": "The grip interface shall be sized from a caliper survey of every supported grip; the CAD 13.5 mm hole value is a placeholder and is not a release dimension.",
+      "verification": "inspection|test",
+      "status": "defined",
+      "source": "cad/README.md#caliper-survey"
+    },
+    {
+      "id": "REQ-003",
+      "statement": "Each passive club dock shall use a measured two-piece split collar around the upper grip with a keyed dovetail and captive spring tab; counterweighted grips are unsupported until separately measured.",
+      "verification": "analysis|test",
+      "status": "defined",
+      "source": "mechanical/design.json#requirements (public design requirement; physical validation pending)"
+    },
+    {
+      "id": "REQ-004",
+      "statement": "The final body shall use a heat- and UV-suitable candidate material; ASA is the current candidate, while PETG is limited to room-temperature rig iterations.",
+      "verification": "inspection|test",
+      "status": "defined",
+      "source": "docs/hardware-review.md#major-design-changes"
+    },
+    {
+      "id": "REQ-005",
+      "statement": "The reusable puck shall preserve an event until the phone has durably stored and acknowledged it; event identity shall include puck identity, boot epoch, and monotonic sequence, with mount-session club assignment kept as separate provenance.",
+      "verification": "analysis|test",
+      "status": "defined",
+      "source": "mechanical/design.json#requirements (public design requirement; physical validation pending)"
+    },
+    {
+      "id": "REQ-006",
+      "statement": "The Phase 1 rig shall rigidly couple the sensors to the club so that compliant mounting material does not filter the shock spectrum under study.",
+      "verification": "inspection",
+      "status": "defined",
+      "source": "cad/README.md#rigid-coupling"
+    },
+    {
+      "id": "REQ-007",
+      "statement": "No fit, pull-out, shock, waterproof, power, radio, or field-accuracy claim shall be promoted to release status without attended physical evidence.",
+      "verification": "inspection",
+      "status": "defined",
+      "source": "docs/hardware-review.md"
+    },
+    {
+      "id": "REQ-008",
+      "statement": "The sensor PCB shall be hard-located in a rigid carrier; TPU may be used only as a non-structural liner, bumper, or gasket and shall not be the sole sensor load path.",
+      "verification": "inspection|test",
+      "status": "defined",
+      "source": "mechanical/design.json#requirements (public design requirement; physical validation pending)"
+    },
+    {
+      "id": "REQ-009",
+      "statement": "The active puck shall be reusable across supported club docks, and the first club-assignment workflow shall require explicit user confirmation when the mount session changes.",
+      "verification": "inspection|test",
+      "status": "defined",
+      "source": "mechanical/design.json#requirements (public design requirement; physical validation pending)"
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "IF-001",
+      "name": "grip butt interface",
+      "description": "Upper-grip and butt-cap exterior for the two-piece passive dock; diameter, depth, ovality, cap OD, and obstructions vary across the bag.",
+      "status": "measured-data-required"
+    },
+    {
+      "id": "IF-002",
+      "name": "sensor platform",
+      "description": "Rigid PCB-to-body seat for the XIAO/high-g Phase 1 rig; no foam, rubber, or tape under the boards.",
+      "status": "bench-unverified"
+    },
+    {
+      "id": "IF-003",
+      "name": "battery door",
+      "description": "Replaceable CR2032 with lid preload and a candidate radial O-ring; exact gland and contact geometry remain to be tested.",
+      "status": "unverified"
+    },
+    {
+      "id": "IF-004",
+      "name": "BLE and phone sync",
+      "description": "Connectable puck event log, GATT read/ack, mount-session provenance, phone breadcrumb, and raw capture export.",
+      "status": "not-implemented"
+    },
+    {
+      "id": "IF-005",
+      "name": "reusable puck and passive dock",
+      "description": "Keyed dovetail and captive spring tab between one active puck carrier and each passive split collar; no electronics in the dock.",
+      "status": "design-approved-fit-unverified"
+    }
+  ],
+  "load_cases": [
+    {
+      "id": "LC-001",
+      "name": "swing and impact shock",
+      "description": "Grip-end acceleration and shock spectrum during real strikes, practice swings, fat/turf-brush swings, bag jostles, and drops.",
+      "input": "Unknown until the high-g reference channel is measured on the Phase 1 rig.",
+      "verification": "test",
+      "status": "blocked-on-measurement"
+    },
+    {
+      "id": "LC-002",
+      "name": "dock retention and pull-out",
+      "description": "Attach/detach cycle and pull-out behavior of each supported passive dock size.",
+      "target": "The first fit coupon requires at least 20 attach/detach cycles; the production dock target is at least 100 cycles and a 50 N pull-out check. These are test targets, not demonstrated strength.",
+      "verification": "test",
+      "status": "not_started"
+    },
+    {
+      "id": "LC-003",
+      "name": "battery contact interruption",
+      "description": "Coin-cell contact bounce during representative impact and shock.",
+      "input": "Waveform and contact geometry unknown until the battery-door prototype is instrumented.",
+      "verification": "test",
+      "status": "not_started"
+    }
+  ],
+  "materials": [
+    {
+      "id": "MAT-001",
+      "name": "ASA printed enclosure candidate",
+      "source": "docs/hardware-review.md#major-design-changes; final filament supplier TDS required before release",
+      "properties": {
+        "role": "final enclosure candidate",
+        "status": "candidate-only",
+        "hot-car_validation": "required"
+      },
+      "status": "unverified"
+    },
+    {
+      "id": "MAT-002",
+      "name": "PETG printed rig candidate",
+      "source": "cad/README.md#print-settings; room-temperature prototype only",
+      "properties": {
+        "role": "Phase 1 measurement rig",
+        "status": "prototype-only"
+      },
+      "status": "unverified"
+    },
+    {
+      "id": "MAT-003",
+      "name": "silicone or equivalent radial O-ring",
+      "source": "docs/hardware-review.md#major-design-changes; supplier compound and size TDS required",
+      "properties": {
+        "role": "battery-door seal",
+        "status": "candidate-only"
+      },
+      "status": "unverified"
+    },
+    {
+      "id": "MAT-004",
+      "name": "CR2032 primary cell",
+      "source": "docs/hardware-review.md#major-design-changes; use a specified supplier datasheet and measured pulse behavior",
+      "properties": {
+        "role": "replaceable power source",
+        "status": "candidate-only"
+      },
+      "status": "unverified"
+    },
+    {
+      "id": "MAT-005",
+      "name": "TPU 95A printed liner, bumper, or gasket",
+      "source": "https://polymaker.com/wp-content/uploads/lana-downloads/PolyFlex-TPU95_TDS_EN_V5.4.pdf",
+      "properties": {
+        "role": "non-structural compliant interface only",
+        "status": "candidate-only",
+        "sole_sensor_load_path": "not_allowed"
+      },
+      "status": "unverified"
+    }
+  ],
+  "tolerances": [
+    {
+      "id": "TOL-001",
+      "feature": "upper-grip dock fit",
+      "value": "TBD from two-axis caliper survey and printed split-collar fit coupons",
+      "source": "cad/README.md#caliper-survey",
+      "status": "open"
+    },
+    {
+      "id": "TOL-002",
+      "feature": "tag cap outside diameter",
+      "value": "Must not exceed the smallest supported grip butt outside diameter; final numeric limit is measured per grip",
+      "source": "USGA Equipment Rules and docs/hardware-review.md#major-design-changes",
+      "status": "open"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "cad/phase1-rig-mount.scad",
+      "type": "CAD source",
+      "status": "unrendered"
+    },
+    {
+      "path": "cad/README.md",
+      "type": "fit and rigidity procedure",
+      "status": "source"
+    },
+    {
+      "path": "firmware/phase1/src/main.c",
+      "type": "bench firmware",
+      "status": "compile-verified-hardware-untested"
+    }
+  ],
+  "checks": {
+    "packet": "validated",
+    "geometry": "not_started",
+    "physical_fit": "not_started",
+    "physical_load": "not_started",
+    "human_release": false
+  },
+  "safety": {
+    "hazards": [
+      "Club-mounted mass can alter swing feel or detach during a swing.",
+      "Coin-cell contacts and prototype Li-Po wiring can fail under shock.",
+      "Printed material and cell temperature limits can be exceeded in a parked vehicle.",
+      "High-g shock and swinging clubs require an attended, controlled test area."
+    ],
+    "gates": [
+      "Require attended approval before power, motion, fabrication, or physical testing.",
+      "Verify fit coupons on a non-critical club before full rig installation.",
+      "Keep the Li-Po prototype off the club when not actively supervised; do not leave it in a hot vehicle.",
+      "Do not swing a prototype until retention, mass, clearance, and battery retention are inspected.",
+      "Do not treat a geometry render, packet validation, or offline classifier result as proof of physical safety or accuracy.",
+      "Human owner must review field evidence before release or full-bag deployment."
+    ],
+    "physical_test_requires_attended": true,
+    "release_approval": "human"
+  },
+  "external_tools": [
+    {
+      "name": "OpenSCAD",
+      "purpose": "render and inspect the Phase 1 mount",
+      "revision": "TBD",
+      "status": "not_available-at-baseline"
+    },
+    {
+      "name": "Nordic PPK2",
+      "purpose": "measure production sleep current and radio pulse behavior",
+      "revision": "TBD",
+      "status": "not_available-at-baseline"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/hardware-review.md",
+      "claim": "post-review electrical, RF, mechanical, firmware, and data baseline",
+      "status": "repository-source"
+    },
+    {
+      "path": "docs/plan.md",
+      "claim": "phase exit criteria and production geometry targets",
+      "status": "repository-source"
+    },
+    {
+      "path": "docs/data-format.md",
+      "claim": "normalized shot and distance-type contract",
+      "status": "repository-source"
+    },
+    {
+      "path": "app/capture.mjs",
+      "claim": "event age and nearest-breadcrumb attribution behavior",
+      "status": "repository-source"
+    },
+    {
+      "path": "mechanical/design.json",
+      "claim": "advisory retention screen only: 0.012 kg at assumed 20 g with safety factor 2 gives 4.71 N; measured shock and pull-out evidence remain required",
+      "status": "analysis-only"
+    },
+    {
+      "url": "https://www.st.com/resource/en/datasheet/lis2dw12.pdf",
+      "claim": "LIS2DW12 output rates, ranges, FIFO, and operating envelope",
+      "status": "primary-external-source"
+    },
+    {
+      "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/adxl372.pdf",
+      "claim": "ADXL372 high-g range, instant-on, and FIFO capabilities",
+      "status": "primary-external-source"
+    },
+    {
+      "url": "https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/CoreBluetooth_concepts/CoreBluetoothBackgroundProcessingForIOSApps/PerformingTasksWhileYourAppIsInTheBackground.html",
+      "claim": "iOS background BLE coalescing, state restoration, and execution limits",
+      "status": "primary-external-source"
+    },
+    {
+      "url": "https://developer.apple.com/documentation/corelocation/handling-location-updates-in-the-background",
+      "claim": "native background-location capability and lifecycle limits",
+      "status": "primary-external-source"
+    },
+    {
+      "url": "https://www.usga.org/custom-search-pages/rules/equipment-rules/rule-14617.html",
+      "claim": "temporary butt-end attachment geometry and no-performance-benefit boundary",
+      "status": "primary-external-source"
+    },
+    {
+      "url": "https://www.adafruit.com/product/5374",
+      "claim": "ADXL375 Phase 1 breakout dimensions, mass, mounting holes, and I2C/SPI interface",
+      "status": "primary-external-source"
+    },
+    {
+      "url": "https://polymaker.com/wp-content/uploads/lana-downloads/PolyFlex-TPU95_TDS_EN_V5.4.pdf",
+      "claim": "TPU95 hardness, modulus, elongation, and printed-part limitations",
+      "status": "primary-external-source"
+    }
+  ]
+}

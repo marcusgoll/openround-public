@@ -1,0 +1,18 @@
+{
+  "provider": "opengolfapi",
+  "release": "v2.1.0",
+  "generatedAt": "2026-08-28T00:00:00.000Z",
+  "artifact": "opengolfapi-us-v2.1.0.geojson",
+  "format": "GeoJSON FeatureCollection",
+  "sha256": "fb4aa24aa8bce2fe338812bc316a2067720c6ffb7874429f5c037b31578300db",
+  "courseCount": 15667,
+  "geometryCoverage": "catalog centers and scorecards only; hole geometry must be loaded from a validated geometry bundle",
+  "sourceUrl": "https://github.com/opengolfapi/data/releases/tag/v2.1.0",
+  "license": "ODbL-1.0",
+  "attribution": "© OpenStreetMap contributors (ODbL 1.0) via OpenGolfAPI",
+  "refresh": {
+    "cadence": "release-driven",
+    "dedupeKey": "id",
+    "validation": "sha256 + schema + finite coordinates"
+  }
+}

@@ -1,0 +1,63 @@
+name: CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: uv sync --locked
+      - run: uv run pytest
+      - run: uv build
+      - name: Audit locked production dependencies
+        run: |
+          uv export --locked --no-dev --no-emit-project --format requirements-txt --output-file /tmp/requirements.txt
+          uvx pip-audit==2.10.1 --disable-pip --no-deps --requirement /tmp/requirements.txt
+  web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: prototypes/openround-iphone
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: prototypes/openround-iphone/package-lock.json
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: node --test ../../app/*.test.mjs
+      - run: npm run test:model
+      - run: npm run test:pwa
+      - run: npm run build
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:runtime -- --workers=1
+        env:
+          MOBILE_RUNTIME_TEST_PORT: '4174'
+      - run: git diff --exit-code
+  secrets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Scan Git history and working tree
+        run: |
+          docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:v8.30.1 git --redact --log-opts="--all" /repo
+          docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:v8.30.1 dir --redact /repo
