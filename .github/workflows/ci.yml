@@ -46,7 +46,7 @@ jobs:
       - run: npm run test:pwa
       - run: npm run build
       - run: npx playwright install --with-deps chromium
-      - run: npm run test:runtime -- --workers=1
+      - run: npm run test:runtime -- --workers=1 --reporter=line --max-failures=1
         env:
           MOBILE_RUNTIME_TEST_PORT: '4174'
       - run: git diff --exit-code
