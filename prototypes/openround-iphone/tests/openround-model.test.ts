@@ -826,6 +826,7 @@ test("geometry cache manifests reject duplicate keys and loader verifies artifac
   }, 1, "v2.1.0");
   const artifact = geometryCacheArtifact("course-1", 1, "v2.1.0");
   const artifactText = `${JSON.stringify(loaded, null, 2)}\n`;
+  assert.equal(await sha256Hex(artifactText.replaceAll("\n", "\r\n")), await sha256Hex(artifactText));
   const record = {
     key: geometryCacheKey("course-1", 1),
     courseId: "course-1",
