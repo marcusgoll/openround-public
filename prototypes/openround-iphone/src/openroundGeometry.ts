@@ -1,3 +1,6 @@
+import booleanPointInPolygon from "@turf/boolean-point-in-polygon";
+import distance from "@turf/distance";
+import { point } from "@turf/helpers";
 import {
   getHoleReadiness,
   type CourseFeature,
@@ -131,20 +134,13 @@ function pointNearRing(point: GeoJsonPosition, ring: GeoJsonPosition[], toleranc
 
 const AUTOMATIC_GREEN_LANDING_YARDS = 1;
 const AUTOMATIC_GREEN_BINARY_STEPS = 24;
-const EARTH_RADIUS_METERS = 6_371_000;
-const YARDS_PER_METER = 1.093_613_3;
 
 function interpolateGeoPosition(start: GeoJsonPosition, end: GeoJsonPosition, fraction: number): GeoJsonPosition {
   return [start[0] + (end[0] - start[0]) * fraction, start[1] + (end[1] - start[1]) * fraction];
 }
 
 function geoDistanceYards(start: GeoJsonPosition, end: GeoJsonPosition) {
-  const latitudeOne = (start[1] * Math.PI) / 180;
-  const latitudeTwo = (end[1] * Math.PI) / 180;
-  const deltaLatitude = ((end[1] - start[1]) * Math.PI) / 180;
-  const deltaLongitude = ((end[0] - start[0]) * Math.PI) / 180;
-  const haversine = Math.sin(deltaLatitude / 2) ** 2 + Math.cos(latitudeOne) * Math.cos(latitudeTwo) * Math.sin(deltaLongitude / 2) ** 2;
-  return 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine)) * EARTH_RADIUS_METERS * YARDS_PER_METER;
+  return distance(point(start), point(end), { units: "yards" });
 }
 
 function crossProduct(first: GeoJsonPosition, second: GeoJsonPosition) {
@@ -181,14 +177,9 @@ function segmentBoundaryIntersections(start: GeoJsonPosition, end: GeoJsonPositi
 
 export function isGeoPositionInsideGeometry(position: GeoJsonPosition, geometry: GeoJsonGeometry, toleranceDegrees = 0.0002) {
   if (geometry.type === "Point") return Math.hypot(position[0] - geometry.coordinates[0], position[1] - geometry.coordinates[1]) <= toleranceDegrees;
-  if (geometry.type === "Polygon") {
-    const [outer, ...holes] = geometry.coordinates;
-    return Boolean(outer && pointInRing(position, outer) && !holes.some((ring) => pointInRing(position, ring)));
+  if (geometry.type === "Polygon" || geometry.type === "MultiPolygon") {
+    return booleanPointInPolygon(point(position), geometry, { ignoreBoundary: true });
   }
-  if (geometry.type === "MultiPolygon") return geometry.coordinates.some((polygon) => {
-    const [outer, ...holes] = polygon;
-    return Boolean(outer && pointInRing(position, outer) && !holes.some((ring) => pointInRing(position, ring)));
-  });
   const points = geometryPositions(geometry);
   if (points.length === 0) return false;
   const longitudes = points.map(([longitude]) => longitude);

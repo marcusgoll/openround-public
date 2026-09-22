@@ -851,7 +851,7 @@ test("geometry cache manifests reject duplicate keys and loader verifies artifac
     status: 200,
     ok: true,
     json: async () => manifest,
-    text: async () => artifactText,
+    text: async () => artifactText.replaceAll("\n", "\r\n"),
   }) as unknown as Response;
   const restored = await fetchBundledHoleGeometry("course-1", 1, fetcher);
   assert.equal(restored?.sourceVersion, "v2.1.0");

@@ -30,7 +30,8 @@ export function geometryCacheArtifact(courseId: string, holeNumber: number, vers
 }
 
 export async function sha256Hex(value: string) {
-  const digest = await globalThis.crypto.subtle.digest("SHA-256", new TextEncoder().encode(value));
+  const canonicalValue = value.replace(/\r\n?/g, "\n");
+  const digest = await globalThis.crypto.subtle.digest("SHA-256", new TextEncoder().encode(canonicalValue));
   return [...new Uint8Array(digest)].map((byte) => byte.toString(16).padStart(2, "0")).join("");
 }
 

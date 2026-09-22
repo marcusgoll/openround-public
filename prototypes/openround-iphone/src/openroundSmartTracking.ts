@@ -1,3 +1,5 @@
+import distance from '@turf/distance';
+import { point } from '@turf/helpers';
 import { isGeoPositionInsideGeometry, type LoadedHoleGeometry } from './openroundGeometry.ts';
 import type { GeoPoint as Point } from './openroundCourseData.ts';
 export type TrackingFix = Point & {id: string; time: number; accuracy: number; hole: number; segment: string};
@@ -11,8 +13,7 @@ export type TrackingSnapshot = {
  session?: {sessionID: string; context: {roundID: string; courseID: string; hole: number}; fixes: TrackingFix[]; corrections: TrackingCorrection[]; running: boolean};
 };
 export function distanceBetweenYards(start: Point, end: Point) {
- const rad = Math.PI / 180;
- return Math.hypot((end.lat-start.lat)*rad, (end.lon-start.lon)*rad*Math.cos((start.lat+end.lat)/2*rad))*6_371_008.8*1.093_613_3;
+ return distance(point([start.lon, start.lat]), point([end.lon, end.lat]), { units: 'yards' });
 }
 function validFix(fix: TrackingFix) {
  return typeof fix.id === 'string' && typeof fix.segment === 'string' && Number.isFinite(fix.time) && fix.time > 0 &&
