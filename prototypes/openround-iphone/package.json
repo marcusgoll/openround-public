@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "test:model": "node --test tests/openround-model.test.ts tests/openround-on-course-model.test.ts tests/openround-club-evidence.test.ts tests/openround-club-statistics.test.ts tests/course-library-field-log.test.mjs tests/smart-tracking.test.ts",
+    "test:model": "node --test tests/openround-model.test.ts tests/openround-on-course-model.test.ts tests/openround-club-evidence.test.ts tests/openround-club-statistics.test.ts tests/course-library-field-log.test.mjs tests/smart-tracking.test.ts tests/openround-round-session.test.ts",
     "prepare:course-catalog": "node scripts/prepare-course-catalog.mjs",
     "verify:course-catalog": "node scripts/verify-course-catalog.mjs",
     "refresh:course-library": "node scripts/refresh-course-library.mjs",

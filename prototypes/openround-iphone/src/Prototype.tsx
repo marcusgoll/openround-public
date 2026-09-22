@@ -86,7 +86,15 @@ import {
   recommendPitchClubId,
 } from "./openroundOnCourseModel";
 import { getBrowserOnCourseStorage } from "./openroundOnCoursePersistence";
-import { loadRounds, saveRounds, roundTotals, type SavedRound, type SavedHole } from "./openroundRounds";
+import { roundTotals, type SavedRound } from "./openroundRounds";
+import {
+  createActiveRoundSummary as createRoundSessionSummary,
+  loadStoredActiveRound,
+  ROUND_SESSION_STORAGE_KEY,
+  type ActiveRoundStatus,
+  type ActiveRoundSummary,
+  useOpenRoundSession,
+} from "./openroundRoundSession";
 import { estimateCameraPinDistance, type CameraPinEstimate } from "./openroundCameraPin";
 import { projectClubEvidence } from "./openroundClubEvidence";
 import {
@@ -187,18 +195,6 @@ type RoundSetup = {
 type StartView = "start" | "field";
 type StartFlowScreen = "home" | "round";
 type PrototypeVariant = "a" | "b" | "c";
-type ActiveRoundStatus = "ready" | "tracking" | "paused" | "complete";
-
-type ActiveRoundSummary = {
-  version: 1;
-  courseId: string;
-  courseName: string;
-  layoutLabel: string;
-  holeNumber: number;
-  teeBox: TeeBox;
-  status: ActiveRoundStatus;
-  updatedAt: string;
-};
 
 type CaddyAggressivenessConfig = {
   label: string;
@@ -459,9 +455,7 @@ const LEGACY_AIM_STORAGE_KEY = "openround:round-demo:hole-7:shot-2:aim";
 const CONDITIONS_STORAGE_KEY = "openround:playing-conditions:v1";
 const CADDY_STRATEGY_STORAGE_KEY = "openround:caddy-aggressiveness:v1";
 const ROUND_SETUP_STORAGE_KEY = "openround:round-setup:v1";
-const ACTIVE_ROUND_STORAGE_KEY = "openround:active-round:v1";
 const START_VIEW_STORAGE_KEY = "openround:start-view:v1";
-const ROUND_SESSION_STORAGE_KEY = "openround:round-session:v1";
 const DEFAULT_PLAYING_CONDITIONS: PlayingConditions = { windMph: 8, windDirection: "crosswind", elevationYards: 2, temperatureF: 72 };
 const DEFAULT_ROUND_SETUP: RoundSetup = {
   version: 1,
@@ -773,10 +767,6 @@ function isStartView(value: unknown): value is StartView {
   return value === "start" || value === "field";
 }
 
-function isActiveRoundStatus(value: unknown): value is ActiveRoundStatus {
-  return value === "ready" || value === "tracking" || value === "paused" || value === "complete";
-}
-
 function isIsoTimestamp(value: unknown): value is string {
   return typeof value === "string" && Number.isFinite(Date.parse(value));
 }
@@ -925,30 +915,6 @@ function createRoundLogForRound(courseId: string, holeNumber: number, score = 4,
   };
 }
 
-function isActiveRoundSummary(value: unknown): value is ActiveRoundSummary {
-  if (!value || typeof value !== "object" || Array.isArray(value)) return false;
-  const summary = value as Partial<ActiveRoundSummary>;
-  return (
-    summary.version === 1 &&
-    typeof summary.courseId === "string" &&
-    summary.courseId.trim().length > 0 &&
-    summary.courseId.length <= 160 &&
-    typeof summary.courseName === "string" &&
-    summary.courseName.trim().length > 0 &&
-    summary.courseName.length <= 160 &&
-    typeof summary.layoutLabel === "string" &&
-    summary.layoutLabel.trim().length > 0 &&
-    summary.layoutLabel.length <= 64 &&
-    typeof summary.holeNumber === "number" &&
-    Number.isInteger(summary.holeNumber) &&
-    summary.holeNumber >= 1 &&
-    summary.holeNumber <= 18 &&
-    isTeeBox(summary.teeBox) &&
-    isActiveRoundStatus(summary.status) &&
-    isIsoTimestamp(summary.updatedAt)
-  );
-}
-
 function loadStoredStartView(): StartView {
   if (typeof window === "undefined") return "start";
   try {
@@ -957,31 +923,6 @@ function loadStoredStartView(): StartView {
   } catch {
     return "start";
   }
-}
-
-function loadStoredActiveRound(): ActiveRoundSummary | null {
-  if (typeof window === "undefined") return null;
-  try {
-    const storedValue = window.localStorage.getItem(ACTIVE_ROUND_STORAGE_KEY);
-    if (!storedValue) return null;
-    const parsed: unknown = JSON.parse(storedValue);
-    if (isActiveRoundSummary(parsed)) return parsed;
-    window.localStorage.removeItem(ACTIVE_ROUND_STORAGE_KEY);
-    return null;
-  } catch {
-    try {
-      window.localStorage.removeItem(ACTIVE_ROUND_STORAGE_KEY);
-    } catch {
-      // Ignore storage cleanup failures; the invalid record is still ignored.
-    }
-    return null;
-  }
-}
-
-function activeRoundLayoutLabel(course: CourseCatalogEntry | null): string {
-  if (!course || course.id === DEMO_OPENROUND_COURSE.id) return "DEMO FIXTURE";
-  const layout = course.name.split("·").at(-1)?.trim();
-  return layout ? layout.toUpperCase() : "COURSE";
 }
 
 function activeRoundStatusLabel(status: ActiveRoundStatus): string {
@@ -997,16 +938,13 @@ function createActiveRoundSummary(
   teeBox: TeeBox,
   status: ActiveRoundStatus,
 ): ActiveRoundSummary {
-  return {
-    version: 1,
-    courseId: course?.id ?? DEMO_OPENROUND_COURSE.id,
-    courseName: course?.name ?? "DEMO COURSE",
-    layoutLabel: activeRoundLayoutLabel(course),
-    holeNumber: clamp(Math.round(holeNumber), 1, 18),
+  return createRoundSessionSummary(
+    course ? { id: course.id, name: course.name } : null,
+    DEMO_OPENROUND_COURSE.id,
+    holeNumber,
     teeBox,
     status,
-    updatedAt: new Date().toISOString(),
-  };
+  );
 }
 
 function loadStoredRoundSetup(): RoundSetup {
@@ -2634,7 +2572,7 @@ export default function Prototype() {
   const [initialCourseSelection] = useState<CourseSelection | undefined>(() => {
     if (typeof window === "undefined") return storeCourseSelection(undefined, DEFAULT_OPENROUND_COURSE, 1, DEFAULT_OPENROUND_COURSE.updatedAt);
     const stored = loadStoredCourseSelection(window.localStorage);
-    if (stored || loadStoredActiveRound()?.courseId === DEMO_OPENROUND_COURSE.id) return stored;
+    if (stored || loadStoredActiveRound(getBrowserOnCourseStorage(), isTeeBox)?.courseId === DEMO_OPENROUND_COURSE.id) return stored;
     return storeCourseSelection(undefined, DEFAULT_OPENROUND_COURSE, 1, DEFAULT_OPENROUND_COURSE.updatedAt);
   });
   const [initialRoundState] = useState(() => {
@@ -2693,12 +2631,19 @@ export default function Prototype() {
     const candidate = new URLSearchParams(window.location.search).get("variant");
     return candidate === "b" || candidate === "c" ? candidate : "a";
   });
-  const [activeRound, setActiveRound] = useState<ActiveRoundSummary | null>(loadStoredActiveRound);
-  const [savedRounds, setSavedRounds] = useState(() => loadRounds(getBrowserOnCourseStorage(), parseStoredRoundSession));
-  const savedRoundsRef = useRef(savedRounds);
-  const [roundRecordId, setRoundRecordId] = useState<string | null>(() => [...savedRounds].reverse().find((round) => round.endedAt === null && round.courseId === loadStoredActiveRound()?.courseId)?.id ?? null);
-  const roundRecordIdRef = useRef(roundRecordId);
-  const [roundSaveError, setRoundSaveError] = useState(false);
+  const roundSession = useOpenRoundSession({
+    storage: getBrowserOnCourseStorage(),
+    validateStoredSession: parseStoredRoundSession,
+    isValidTeeBox: isTeeBox,
+  });
+  const {
+    activeRound,
+    setActiveRound,
+    savedRounds,
+    roundRecordId,
+    roundRecordIdRef,
+    roundSaveError,
+  } = roundSession;
   const [nativeTransitionError, setNativeTransitionError] = useState("");
   const nativeTransitionBusy = useRef(false);
   const [friendScores, setFriendScores] = useState<Record<string, number>>(() => savedRounds.find((round) => round.id === roundRecordId)?.holes.find((hole) => hole.holeNumber === initialCourseSelection?.holeNumber)?.friendScores ?? {});
@@ -2854,18 +2799,6 @@ export default function Prototype() {
       // The start screen remains usable when local storage is unavailable.
     }
   }, [startView]);
-
-  useEffect(() => {
-    try {
-      if (activeRound) {
-        window.localStorage.setItem(ACTIVE_ROUND_STORAGE_KEY, JSON.stringify(activeRound));
-      } else {
-        window.localStorage.removeItem(ACTIVE_ROUND_STORAGE_KEY);
-      }
-    } catch {
-      // The round remains usable in memory when local storage is unavailable.
-    }
-  }, [activeRound]);
 
   useEffect(() => {
     manualMapCenterRef.current = null;
@@ -3238,38 +3171,24 @@ export default function Prototype() {
   });
   const onCourseState = onCourse.state;
 
-  function persistRounds(next: SavedRound[], requireDurable = false) {
-    const saved = saveRounds(getBrowserOnCourseStorage(), next);
-    setRoundSaveError(!saved);
-    if (saved || !requireDurable) {
-      savedRoundsRef.current = next;
-      setSavedRounds(next);
-    }
-    return saved;
-  }
-
-  function captureCurrentHole(): SavedHole {
-    return {
-      holeNumber: currentHoleNumber,
-      session: JSON.stringify({ version: 1, roundId: onCourseIdentity.roundId, courseId: onCourseCourseId, holeNumber: currentHoleNumber, score, lockedShots, manualEntries, tracking, selectedClubId, teeShotClubId }),
-      log: createRoundLogForRound(onCourseCourseId, currentHoleNumber, score, roundLog.events),
-      onCourse: onCourseState,
-      friendScores,
-    };
-  }
-
   function saveCurrentHole() {
-    if (courseIsDemo || onCourseState.courseId !== onCourseCourseId || onCourseState.holeNumber !== currentHoleNumber) return;
-    if (!roundRecordIdRef.current && activeRound && selectedCourse) {
-      const record: SavedRound = { id: savedRoundsRef.current.some((round) => round.id === onCourseIdentity.roundId) ? crypto.randomUUID() : onCourseIdentity.roundId, courseId: selectedCourse.id, courseName: selectedCourse.name, teeBox: activeRound.teeBox, startedAt: activeRound.updatedAt, endedAt: null, golfers: roundSetup.golfers ?? [], holes: [] };
-      roundRecordIdRef.current = record.id;
-      setRoundRecordId(record.id);
-      savedRoundsRef.current = [...savedRoundsRef.current, record];
-    }
-    if (!roundRecordIdRef.current) return;
-    const hole = captureCurrentHole();
-    return persistRounds(savedRoundsRef.current.map((round) => round.id === roundRecordIdRef.current && round.endedAt === null
-      ? { ...round, holes: [...round.holes.filter((saved) => saved.holeNumber !== hole.holeNumber), hole].sort((a, b) => a.holeNumber - b.holeNumber) } : round));
+    return roundSession.saveCurrentHole({
+      courseIsDemo,
+      courseId: onCourseCourseId,
+      holeNumber: currentHoleNumber,
+      roundIdentityId: onCourseIdentity.roundId,
+      onCourseIdentity,
+      activeRound,
+      course: selectedCourse ? { id: selectedCourse.id, name: selectedCourse.name } : null,
+      golfers: roundSetup.golfers ?? [],
+      captureHole: () => ({
+        holeNumber: currentHoleNumber,
+        session: JSON.stringify({ version: 1, roundId: onCourseIdentity.roundId, courseId: onCourseCourseId, holeNumber: currentHoleNumber, score, lockedShots, manualEntries, tracking, selectedClubId, teeShotClubId }),
+        log: createRoundLogForRound(onCourseCourseId, currentHoleNumber, score, roundLog.events),
+        onCourse: onCourseState,
+        friendScores,
+      }),
+    });
   }
 
   useEffect(() => {
@@ -3875,11 +3794,8 @@ export default function Prototype() {
   async function endActiveRound() {
     if (saveCurrentHole() === false) return;
     if (nativeTrackingAvailable && !await prepareNativeTransition()) return;
-    const next = savedRoundsRef.current.map((round) => round.id === roundRecordIdRef.current ? { ...round, endedAt: new Date().toISOString() } : round);
-    if (roundRecordIdRef.current && !persistRounds(next, true)) return;
+    if (!roundSession.endCurrentRound()) return;
     startRequestRef.current += 1;
-    roundRecordIdRef.current = null;
-    setRoundRecordId(null);
     setTracking(null);
     setActiveRound(null);
     setActiveSheet(null);
@@ -4189,15 +4105,14 @@ export default function Prototype() {
     if (saveCurrentHole() === false) return;
     if (nativeTrackingAvailable && !await prepareNativeTransition(newRound ? undefined : course.id, requestedHoleNumber <= (course.holes ?? 18) ? requestedHoleNumber : 1)) return;
     startRequestRef.current += 1;
-    let record = savedRoundsRef.current.find((round) => round.id === roundRecordIdRef.current);
-    if (newRound || !record || record.courseId !== course.id || record.endedAt) {
-      const now = new Date().toISOString();
-      const previous = savedRoundsRef.current.map((round) => round.id === record?.id && !round.endedAt ? { ...round, endedAt: now } : round);
-      record = { id: crypto.randomUUID(), courseId: course.id, courseName: course.name, teeBox: roundSetup.teeBox, startedAt: now, endedAt: null, golfers: roundSetup.golfers ?? [], holes: [] };
-      if (!persistRounds([...previous, record], true)) return;
-      roundRecordIdRef.current = record.id;
-      setRoundRecordId(record.id);
-    }
+    const record = roundSession.openRoundRecord({
+      newRound,
+      course: { id: course.id, name: course.name },
+      teeBox: roundSetup.teeBox,
+      golfers: roundSetup.golfers ?? [],
+      startedAt: new Date().toISOString(),
+    });
+    if (!record) return;
     const holeNumber = requestedHoleNumber <= (course.holes ?? 18) ? requestedHoleNumber : 1;
     const savedHole = record.holes.find((hole) => hole.holeNumber === holeNumber);
     const session = savedHole ? parseStoredRoundSession(savedHole.session) : undefined;
@@ -5581,10 +5496,8 @@ export default function Prototype() {
   async function resetDemo() {
     if (saveCurrentHole() === false) return;
     if (nativeTrackingAvailable && !await prepareNativeTransition()) return;
-    if (roundRecordIdRef.current && !persistRounds(savedRoundsRef.current.map((round) => round.id === roundRecordIdRef.current ? { ...round, endedAt: new Date().toISOString() } : round), true)) return;
+    if (!roundSession.endCurrentRound()) return;
     startRequestRef.current += 1;
-    roundRecordIdRef.current = null;
-    setRoundRecordId(null);
     const defaultProfile = getClubProfile(DEFAULT_APPROACH_CLUB_ID);
     const defaultCaddyPlan = getCaddyPlan(defaultProfile, getShotBias(defaultProfile.offsets), "standard");
     const defaultAimMetrics = getAimMetrics(defaultCaddyPlan.point);
